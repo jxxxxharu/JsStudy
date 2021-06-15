@@ -23,6 +23,9 @@ function drawList(localData) {
     if (toDoUi.classList.contains(`hide`) ) {
     toDoUi.classList.toggle(`hide`);
     }
+    else{
+        toDoUi.innerHTML= '';
+    }
     for (dataidx in localData) {
 
         const newli = document.createElement('li');
@@ -45,6 +48,7 @@ function drawList(localData) {
         newli.appendChild(X);
         toDoUi.appendChild(newli);
         setCheckStyle(newform, dataidx);
+        setevent(newli,dataidx);
     }
 }
 
@@ -60,6 +64,15 @@ function setCheckStyle(checkform, index) {
     crossMark.style.top = '-40px';
     crossMark.style.left = `${offwidth + 60}px`;
     
+}
+
+function setevent(liObj, idxNum) {
+    checkBox = liObj.querySelector(`.formNumber${idxNum}`).querySelector('input');
+    checkBox.addEventListener("click", clickhandler);
+}
+
+function clickhandler(event){
+    console.log(checkBox.checked);
 }
 
 init()
