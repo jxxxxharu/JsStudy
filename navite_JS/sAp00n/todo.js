@@ -1,10 +1,12 @@
 const toDoDiv = document.querySelector(`.to-do-div`);
 const toDoUi = document.querySelector(`.to-do-list`);
 const LSarrayName = 'toDoList';
+const toDoInput = document.querySelector('.to-do-input');
 
 function init() {
     localData = loadLocalData();
     drawList(localData);
+    askNewToDo();
 }
 
 function loadLocalData() {
@@ -67,12 +69,32 @@ function setCheckStyle(checkform, index) {
 }
 
 function setevent(liObj, idxNum) {
-    checkBox = liObj.querySelector(`.formNumber${idxNum}`).querySelector('input');
-    checkBox.addEventListener("click", clickhandler);
+    checkBoxObj = liObj.querySelector(`.formNumber${idxNum}`).querySelector('input');
+    //console.log(checkBoxObj);
+    checkBoxObj.addEventListener("click", function(){checkClickHandler(idxNum)});
 }
 
-function clickhandler(event){
-    console.log(checkBox.checked);
+function checkClickHandler(idxNum){
+    checkObj = toDoUi.querySelector(`.formNumber${idxNum}`).querySelector('input');
+    console.log(checkObj); // 확인용
+    if(localData[idxNum][1] !== checkObj.checked)
+    {
+        localData[idxNum][1] = checkObj.checked
+        localStorage.setItem(LSarrayName, JSON.stringify(localData));
+    }
+}
+
+
+function askNewToDo(){
+    //console.log(toDoInput);
+    toDoInput.addEventListener("submit", handleNewInput);
+}
+
+function handleNewInput(event){
+    event.preventDefault();
+    const newToDo = toDoInput.value;
+    localData.add([newToDo, false]);
+    localStorage.setItem(LSarrayName, JSON.stringify(localData));
 }
 
 init()
