@@ -20,6 +20,7 @@ function loadLocalData() {
 function drawList(localData) {
     console.log(`localData.length = ${localData.length}     localData = ${localData}`);
     if (localData.length == 0) {
+        toDoUi.innerHTML = '';
         return
     }
     if (toDoUi.classList.contains(`hide`) ) {
@@ -78,6 +79,15 @@ function setevent(liObj, idxNum) {
     checkBoxObj = liObj.querySelector(`.formNumber${idxNum}`).querySelector('input');
     //console.log(checkBoxObj);
     checkBoxObj.addEventListener("click", function(){checkClickHandler(idxNum)});
+    XmarkObj = liObj.querySelector(`.Xnum${idxNum}`);
+    XmarkObj.addEventListener("click", function(){XclickHandler(idxNum)});
+}
+
+function XclickHandler(idxNum) {
+    localData = localData.filter((value) => localData.indexOf(value) != idxNum);
+    console.log(localData);
+    localStorage.setItem(LSarrayName, JSON.stringify(localData));
+    init();
 }
 
 function checkClickHandler(idxNum){
