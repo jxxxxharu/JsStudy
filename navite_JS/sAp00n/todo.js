@@ -40,11 +40,15 @@ function drawList(localData) {
         newform.appendChild(newCheck);
         newform.classList.add(`formNumber${dataidx}`);
         newCheck.setAttribute('type','checkbox');
+        if (localData[dataidx][1]) {
+            newCheck.setAttribute('checked', '');
+        }
         newCheck.classList.add(`checkNumber${dataidx}`);
         newspan.classList.add(`textNumber${dataidx}`);
         const [toDoStr, doOrNot] = localData[dataidx];
         newspan.innerText = toDoStr;
         newli.classList.add(dataidx);
+        newli.classList.add('toDoList');
         newli.appendChild(newspan);
         newli.appendChild(newform);
         newli.appendChild(X);
@@ -65,6 +69,8 @@ function setCheckStyle(checkform, index) {
     crossMark.style.position = 'relative';
     crossMark.style.top = '-40px';
     crossMark.style.left = `${offwidth + 60}px`;
+    checkform.parentNode.style.height = '22px';
+
     
 }
 
@@ -87,6 +93,9 @@ function checkClickHandler(idxNum){
 
 function askNewToDo(){
     //console.log(toDoInput);
+    if (localData.length >= 3) {
+        toDoInput.classList.add('hide');
+    } 
     toDoInput.addEventListener("submit", handleNewInput);
 }
 
