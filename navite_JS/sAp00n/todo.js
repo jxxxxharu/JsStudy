@@ -1,6 +1,7 @@
 const toDoDiv = document.querySelector(`.to-do-div`);
 const toDoUi = document.querySelector(`.to-do-list`);
 const LSarrayName = 'toDoList';
+const toDoform = document.querySelector('.to-do-input').parentNode;
 const toDoInput = document.querySelector('.to-do-input');
 
 function init() {
@@ -23,6 +24,10 @@ function drawList(localData) {
         toDoUi.innerHTML = '';
         return
     }
+    if (localData.length < 3 && toDoform.classList.contains('hide')){
+        toDoform.classList.toggle('hide');
+    }
+
     if (toDoUi.classList.contains(`hide`) ) {
     toDoUi.classList.toggle(`hide`);
     }
@@ -101,19 +106,22 @@ function checkClickHandler(idxNum){
 }
 
 
-function askNewToDo(){
-    //console.log(toDoInput);
+function askNewToDo(){;
     if (localData.length >= 3) {
-        toDoInput.classList.add('hide');
+        toDoform.classList.add('hide');
     } 
-    toDoInput.addEventListener("submit", handleNewInput);
+    toDoform.addEventListener("submit", handleNewInput);
 }
 
 function handleNewInput(event){
     event.preventDefault();
     const newToDo = toDoInput.value;
-    localData.add([newToDo, false]);
+    console.log(newToDo);
+    console.log(localData);
+    localData.push([newToDo, false]);
     localStorage.setItem(LSarrayName, JSON.stringify(localData));
+    toDoInput.value = null;
+    init();
 }
 
 init()
