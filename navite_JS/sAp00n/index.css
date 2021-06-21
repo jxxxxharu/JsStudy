@@ -88,6 +88,9 @@ input{
     font-size: 16px;
 }
 
+.toDoList{
+    margin: 15px 0px;
+}
 .bottom-line{
     position: fixed;
     bottom: 0;

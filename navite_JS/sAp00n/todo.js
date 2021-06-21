@@ -1,10 +1,13 @@
 const toDoDiv = document.querySelector(`.to-do-div`);
 const toDoUi = document.querySelector(`.to-do-list`);
 const LSarrayName = 'toDoList';
+const toDoform = document.querySelector('.to-do-input').parentNode;
+const toDoInput = document.querySelector('.to-do-input');
 
 function init() {
     localData = loadLocalData();
     drawList(localData);
+    askNewToDo();
 }
 
 function loadLocalData() {
@@ -18,8 +21,13 @@ function loadLocalData() {
 function drawList(localData) {
     console.log(`localData.length = ${localData.length}     localData = ${localData}`);
     if (localData.length == 0) {
+        toDoUi.innerHTML = '';
         return
     }
+    if (localData.length < 3 && toDoform.classList.contains('hide')){
+        toDoform.classList.toggle('hide');
+    }
+
     if (toDoUi.classList.contains(`hide`) ) {
     toDoUi.classList.toggle(`hide`);
     }
@@ -38,11 +46,15 @@ function drawList(localData) {
         newform.appendChild(newCheck);
         newform.classList.add(`formNumber${dataidx}`);
         newCheck.setAttribute('type','checkbox');
+        if (localData[dataidx][1]) {
+            newCheck.setAttribute('checked', '');
+        }
         newCheck.classList.add(`checkNumber${dataidx}`);
         newspan.classList.add(`textNumber${dataidx}`);
         const [toDoStr, doOrNot] = localData[dataidx];
         newspan.innerText = toDoStr;
         newli.classList.add(dataidx);
+        newli.classList.add('toDoList');
         newli.appendChild(newspan);
         newli.appendChild(newform);
         newli.appendChild(X);
@@ -63,16 +75,53 @@ function setCheckStyle(checkform, index) {
     crossMark.style.position = 'relative';
     crossMark.style.top = '-40px';
     crossMark.style.left = `${offwidth + 60}px`;
+    checkform.parentNode.style.height = '22px';
+
     
 }
 
 function setevent(liObj, idxNum) {
-    checkBox = liObj.querySelector(`.formNumber${idxNum}`).querySelector('input');
-    checkBox.addEventListener("click", clickhandler);
+    checkBoxObj = liObj.querySelector(`.formNumber${idxNum}`).querySelector('input');
+    //console.log(checkBoxObj);
+    checkBoxObj.addEventListener("click", function(){checkClickHandler(idxNum)});
+    XmarkObj = liObj.querySelector(`.Xnum${idxNum}`);
+    XmarkObj.addEventListener("click", function(){XclickHandler(idxNum)});
 }
 
-function clickhandler(event){
-    console.log(checkBox.checked);
+function XclickHandler(idxNum) {
+    localData = localData.filter((value) => localData.indexOf(value) != idxNum);
+    console.log(localData);
+    localStorage.setItem(LSarrayName, JSON.stringify(localData));
+    init();
+}
+
+function checkClickHandler(idxNum){
+    checkObj = toDoUi.querySelector(`.formNumber${idxNum}`).querySelector('input');
+    console.log(checkObj); // 확인용
+    if(localData[idxNum][1] !== checkObj.checked)
+    {
+        localData[idxNum][1] = checkObj.checked
+        localStorage.setItem(LSarrayName, JSON.stringify(localData));
+    }
+}
+
+
+function askNewToDo(){;
+    if (localData.length >= 3) {
+        toDoform.classList.add('hide');
+    } 
+    toDoform.addEventListener("submit", handleNewInput);
+}
+
+function handleNewInput(event){
+    event.preventDefault();
+    const newToDo = toDoInput.value;
+    console.log(newToDo);
+    console.log(localData);
+    localData.push([newToDo, false]);
+    localStorage.setItem(LSarrayName, JSON.stringify(localData));
+    toDoInput.value = null;
+    init();
 }
 
 init()
