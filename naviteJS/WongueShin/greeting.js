@@ -16,7 +16,7 @@ function loadName(){
     else {
         paintGreeting(currentUser);
     }
-}
+} 
 
 function handleSubmit(event){
     event.preventDefault();
