@@ -26,4 +26,8 @@ const timesResult = calculator.times(10, minusResult);
 const devideResult = calculator.devide(timesResult, plusResult);
 const powerofResult = calculator.powerof(devideResult, minusResult);
 
-console.log(calculator.plus(2, 3))
+console.log(plusResult);
+console.log(minusResult);
+console.log(timesResult);
+console.log(devideResult);
+console.log(powerofResult);
