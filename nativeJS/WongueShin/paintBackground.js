@@ -1,4 +1,4 @@
-const imageNumber = Math.floor(Math.random() * 6) + 1
+const imageNumber = Math.floor(Math.random() * 7) + 1
 const imagePath = `backgroundPicture/image0${imageNumber}.jpg`
 const docBody = document.querySelector('body');
 
