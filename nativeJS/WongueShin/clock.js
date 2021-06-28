@@ -1,5 +1,6 @@
 const clockContainer = document.querySelector('.js-clock'),
-    clockTitle = clockContainer.querySelector('h1');
+    clockTitle = clockContainer.querySelector('.clock-title'),
+    mainDiv = document.querySelector('.main');
 
 
 function getTime(){
@@ -10,8 +11,17 @@ function getTime(){
     clockTitle.innerText = `${hours}:${minutes}:${seconds}`;
 }
 
+function setlocation(){
+    console.log(`mainH: ${mainDiv.offsetHeight} mainW: ${mainDiv.offsetWidth}\nclockH: ${clockTitle.offsetHeight}   clockW: ${clockTitle.offsetWidth}`);
+    //const heightValue = mainDiv.offsetHeight/2 - clockTitle.offsetHeight/2;
+    const widthValue = mainDiv.offsetWidth/2 - clockTitle.offsetWidth/2;
+    clockContainer.style.top = `22vh`//`${heightValue}px`;
+    clockContainer.style.left = `${widthValue}px`;
+}
+
 function init(){
     getTime();
+    setlocation();
     setInterval(getTime, 500);
 }
 
