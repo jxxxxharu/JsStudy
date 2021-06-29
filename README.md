@@ -36,7 +36,7 @@
 
 [DOM에 대한 간단한 정리_wongueShin](./literature/WongueShin/DOM.md)
 
-[익명함수 Lambda _ wongueshin](./literature/WongueShin/익명함수 Lambda.md)
+[익명함수 Lambda _ wongueshin](./literature/WongueShin/익명함수_Lambda.md)
 
 
 
