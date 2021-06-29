@@ -36,11 +36,4 @@
 
 [DOM에 대한 간단한 정리_wongueShin](./literature/WongueShin/DOM.md)
 
-<<<<<<< HEAD
 [익명함수 Lambda _ wongueshin](./literature/WongueShin/익명함수_Lambda.md)
-=======
-[익명함수 Lambda _ wongueshin](./literature/WongueShin/익명함수_Lambda.md)
-
-
-
->>>>>>> bc0b6f5a3b488bd4b1c526fd2df2ec49a1bae4d0
