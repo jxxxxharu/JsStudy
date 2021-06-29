@@ -39,7 +39,7 @@ function handleWindowOnline() {
   alert("All good");
 }
 
-// 클릭하는 것을 감지한는 이벤트 설정하기
+// 클릭하는 것을 감지하는 이벤트 설정하기
 // 0. html요소 가져오기
 // 1. addEventListenr 호출
 // 2. 첫번째 인자로 listen 하고 싶은 event이름 알려주기
