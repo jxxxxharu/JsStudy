@@ -38,8 +38,7 @@
 
 [익명함수 Lambda _ wongueshin](./literature/WongueShin/익명함수_Lambda.md)
 
-<b>Native Js</b>
+
+
+<b>Native Js 결과물</b>
 * [WongueShin](https://wongueshin.github.io/JsStudy/nativeJS/WongueShin/)
-
-
-
