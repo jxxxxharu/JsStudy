@@ -56,6 +56,8 @@ body{
     color: #ecf0f1;
     text-align: center;
     font-family: 'Work Sans', sans-serif;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
     font-size: 45px;
 }
 
@@ -85,18 +87,14 @@ body{
 
 input::placeholder{
     color: #ecf0f1;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
 }
 
 .js-greetings{
     margin-left: 5px;
 }
 
-.test-txt{
-    color: #2980b9;
-    margin: 0px;
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
 
 .button{
     opacity: 0.8;
@@ -117,6 +115,8 @@ input::placeholder{
     font-size: 20px;
     font-family: 'Work Sans', sans-serif;
     list-style: none;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
 }
 .bottom-line{
     position: fixed;
