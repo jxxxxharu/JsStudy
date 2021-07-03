@@ -1,20 +1,17 @@
 body {
   font-family: sans-serif;
+  /* flex 속성을 추가하는 이유? */
   display: flex;
 }
-
 h2 {
   color: white;
 }
-
-.bigScreen {
-  background-color: #f1c40f;
-}
-
-.mediumScreen {
-  background-color: #9b59b6;
-}
-
 .smallScreen {
-  background-color: #3498db;
+  background-color: #337ec4;
+}
+.mediumScreen {
+  background-color: rgb(152, 90, 190);
+}
+.bigScreen {
+  background-color: rgb(255, 208, 0);
 }
