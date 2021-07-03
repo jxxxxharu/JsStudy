@@ -17,4 +17,4 @@ const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
 4. 창의 크기를 조절했을 때 h2의 innerText = "You just resized!", 색은 보라색
  --> 한번 만들어보세요!! 
 */
-const superEventHandler = {}
+const superEventHandler = { }
