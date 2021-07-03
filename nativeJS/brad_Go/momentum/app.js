@@ -1,4 +1,3 @@
-
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 // js에서 html의 id greeting을 통해 h1 요소를 찾아서 가져오기
