@@ -1,10 +1,7 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-// js에서 html의 id greeting을 통해 h1 요소를 찾아서 가져오기
 const greeting = document.querySelector("#greeting");
 
-// string만 포함되는 변수는 대문자를 사용하고 string을 저장하고 싶을 때는 관습적으로 대문자를 사용한다!! 
-// string이 오타가 나면 js는 지적하지 않는다. 그러므로 무조건 같아야 하는 string이 반복된다면 변수에 저장하자! 변수명은 지적해준다.
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
