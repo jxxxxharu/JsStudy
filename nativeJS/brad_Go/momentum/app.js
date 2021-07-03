@@ -9,38 +9,38 @@ const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
-// 방금 일어난 event에 대한 정보를 지닌 argument event 작성
+// a-3. 이벤트 리스너 함수 실행
 function onLoginSubmit(event) {
-  // 브라우저의 기본 동작을 막는 eventListener 함수의 첫번째 인자의 기본함수 preventDefault 작성
+  // 1. 브라우저의 기본동작(여기서는 새로고침) 막기
   event.preventDefault();
-  // 이벤트가 실행되면 form을 숨겨주는 CSS가 담긴 classname을 추가
+  // 2. form을 숨기기
   loginForm.classList.add(HIDDEN_CLASSNAME);
-  // username에 입력값 저장
+  // 3. loginInput값을 username 변수에 저장
   const username = loginInput.value;
-  // id를 통해 가져온 h1 요소의 텍스트 추가하기
+  // 4. username값을 usename이라는 key와 함게 local storage에 저장
   localStorage.setItem(USERNAME_KEY, username);
+  // 5. 아래의 함수 호출. 이 함수는 form안에 input값인 username을 인자로 받는다. 
   paintGreetings(username);
 }
 
-// 저장된 username을 가져오는 함수 작성, 위의 const username과 다른 매개변수 username 작성
+// a-4. b-3. paintGreetings 함수 실행. 매개변수로 username을 받는다. 
 function paintGreetings(username) {
-  // h1의 텍스틑 존재 x. h1의 저장된 username을 추가
-  // 위의 username 변수는 함수 안에 존재하므로 savedUsername 을 작성
+  // 1. h1의 텍스틑 존재 x. h1에 매개변수로 받은 username을 추가
   greeting.innerText = "Hello " + username;
-  // h1의 hidden class를 제거
+  // 2. h1의 hidden class를 제거
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-// local storage에 username이 있는지 확인하기
-// local storge에 저장된 username을 변수에 저장
+// a-1. b-1. local storage에 username이 있는지 확인하기!
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
+// a-2. 조건이 참인 상태의 조건문 시작
 if(savedUsername === null) {
-  // show the form
+  // 1. local storage에 username이 없다면 form을 보여주기
   loginForm.classList.remove(HIDDEN_CLASSNAME);
-  // submit event 발생 시 event를 감지하고 함수를 실행하는 eventListenr 작성
+  // 2. submit event가 발생하면 onLoginSubmit 함수 실행
   loginForm.addEventListener("submit", onLoginSubmit);
+// b-2. 조건이 거짓인 상태의 조건문 시작
 } else {
-  // show the greetings
   paintGreetings(savedUsername);
 }
