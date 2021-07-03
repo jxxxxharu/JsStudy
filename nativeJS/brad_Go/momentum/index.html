@@ -8,9 +8,17 @@
     <title>Momentum App</title>
   </head>
   <body>
-    <div class="hello">
-      <h1 class="sexy-font">Click me!</h1>
-    </div>
+    <!-- username이 local storage에 저장되어 있는지에 따라서 결괏값을 선택해서 표시하기 위해 hidden class를 form과 h1에 적용 -->
+    <form id="login-form" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <input type="submit" value="Log In" />
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
     <script src="app.js"></script>
   </body>
 </html>
