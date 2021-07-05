@@ -1,7 +1,9 @@
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
     greeting = document.querySelector(".js-greetings"),
-    resetname = document.querySelector(".reset-name");
+    resetname = document.querySelector(".reset-name"),
+    date = new Date(),
+    hours = date.getHours();
 
 const USER_LS = "currentUser",
     SHOWING_CN = 'showing';
@@ -36,7 +38,15 @@ function paintGreeting(text) {
     form.classList.remove(SHOWING_CN);
     form.classList.add(HIDE_CN);
     greeting.classList.add(SHOWING_CN);
-    greeting.innerText = `Hello, ${text}`;
+    if (hours < 12) { 
+        greeting.innerText = `Good morning, ${text}`;
+    }
+    else if (hours < 18) {
+        greeting.innerText = `Good afternoon, ${text}`;
+    }
+    else{
+        greeting.innerText = `Good evening, ${text}`;
+    }
 }
 
 function resetName(){
