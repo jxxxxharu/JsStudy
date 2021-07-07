@@ -1,23 +1,22 @@
 //선택자 선언
 const clock = document.querySelector("h2#clock");
 
-function getClock(){
-    const date = new Date();
-    const hours = String(date.getHours()).padStart(2,"0");
-    const minutes = String(date.getMinutes()).padStart(2,"0");
-    const seconds = String(date.getSeconds()).padStart(2,"0");
+function getClock() {
+  const date = new Date();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
 
-    clock.innerText = `${hours}:${minutes}:${seconds}`
-
+  clock.innerText = `${hours}:${minutes}:${seconds}`;
 }
 
 //시작
-if (savedUserName === null){
-    clock.classList.add(HIDDEN_CLASSNAME);
-}else {
-    setInterval(getClock,1000);
-    
-    clock.classList.remove(HIDDEN_CLASSNAME);
+if (savedUserName === null) {
+  clock.classList.add(HIDDEN_CLASSNAME);
+} else {
+  setInterval(getClock, 1000);
+
+  clock.classList.remove(HIDDEN_CLASSNAME);
 }
 
 // setInterval(sayHello, 5000); //정해진 밀리초마다 함수실행
