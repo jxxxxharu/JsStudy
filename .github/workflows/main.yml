@@ -20,8 +20,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: make config.js
-      - run: echo $API_KEY
-             cd ./nativeJS/WongueShin
+      - run: |
+             echo $API_KEY
+             cd ../nativeJS/WongueShin
              touch config.js
              cat config.js >> $API_KEY
 
