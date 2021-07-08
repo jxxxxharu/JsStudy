@@ -1,5 +1,5 @@
-const API_KEY = config.weatherApiKey;
-console.log(API_KEY);
+const API_KEY = config.weatherApiKey; //put your Api key
+const weather = document.querySelector("#weather");
 function onGeoOk(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
@@ -19,4 +19,12 @@ function onGeoError() {
   alert("Can't find you. No weather for you.");
 }
 
-navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+
+if (savedUserName === null) {
+  
+  weather.classList.add(HIDDEN_CLASSNAME);
+} else {
+  weather.classList.remove(HIDDEN_CLASSNAME);
+  navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+
+}

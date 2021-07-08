@@ -52,3 +52,13 @@ function paintToDo(newTodoObj) {
 function saveToDos() {
   localStorage.setItem(TODO_KEY, JSON.stringify(toDos));
 }
+
+
+if (savedUserName === null) {
+  
+  todoForm.classList.add(HIDDEN_CLASSNAME);
+  todoList.classList.add(HIDDEN_CLASSNAME);
+} else {
+  todoForm.classList.remove(HIDDEN_CLASSNAME);
+  todoList.classList.remove(HIDDEN_CLASSNAME);
+}

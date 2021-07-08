@@ -41,11 +41,20 @@ const quotes = [
     author: "마르쿠스 아우렐리우스 안토니우스",
   },
 ];
-
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
 
-const todaysQuote = Math.floor(Math.random() * quotes.length);
 
-quote.innerText = quotes[todaysQuote].quote;
-author.innerText = ` - ${quotes[todaysQuote].author} -`;
+
+
+//시작
+if (savedUserName === null) {
+  
+  quote.parentElement.classList.add(HIDDEN_CLASSNAME);
+} else {
+
+  quote.parentElement.classList.remove(HIDDEN_CLASSNAME);
+  const todaysQuote = Math.floor(Math.random() * quotes.length);
+  quote.innerText = quotes[todaysQuote].quote;
+  author.innerText = ` - ${quotes[todaysQuote].author} -`;
+}

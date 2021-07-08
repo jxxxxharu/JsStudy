@@ -3,7 +3,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "userName";
 
 //선택자 선언
-const loginForm = document.querySelector("#login-form");
+const loginForm = document.querySelector("#login-form ");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 
@@ -33,4 +33,3 @@ if (savedUserName === null) {
 } else {
   paintGreetings(savedUserName);
 }
-
