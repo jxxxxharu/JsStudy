@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 
 body{
     background-color: #ecf0f1;
@@ -12,6 +14,28 @@ body{
     height: 7vh;
     background: linear-gradient(to top,rgba(0,0,0,0), 3%, rgba(32, 32, 32, 0.1) ,10% , rgba(70, 70, 70, 0.1));
     z-index: 2;
+}
+
+#weatherIcon{
+    position: relative;
+    left: 35px;
+}
+
+#currentTemp{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 20px;
+    color: rgba(237, 241, 242, 0.8);
+    margin-left: 5px;
+    position: relative;
+    bottom: 2px;
+}
+
+#cityName{
+    font-size: 12px;
+    color: rgba(237, 241, 242, 0.8);
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    top: 4px;
 }
 
 .upline-txt{
