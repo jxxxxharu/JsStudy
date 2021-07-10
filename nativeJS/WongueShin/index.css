@@ -9,25 +9,14 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    height: 25px;
-    background: linear-gradient(to bottom,rgb(48, 16, 102) ,10% , rgb(152, 134, 247)); 
-    opacity: 0.8;
+    height: 7vh;
+    background: linear-gradient(to top,rgba(0,0,0,0), 3%, rgba(32, 32, 32, 0.1) ,10% , rgba(70, 70, 70, 0.1));
     z-index: 2;
 }
 
 .upline-txt{
     z-index: 1;
 
-}
-
-.single-line{
-    height: 5px;
-    width: 100%;
-    background: radial-gradient(rgba(255, 255, 255, 0.155), rgb(170, 153, 201, 0.555), rgba(170, 153, 201, 0.155)) ;
-    opacity: 0.85;
-    position: absolute;
-    top: 15px;
-    z-index: 3;
 }
 
 .main{
@@ -56,6 +45,8 @@ body{
     color: #ecf0f1;
     text-align: center;
     font-family: 'Work Sans', sans-serif;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
     font-size: 45px;
 }
 
@@ -85,18 +76,14 @@ body{
 
 input::placeholder{
     color: #ecf0f1;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
 }
 
 .js-greetings{
     margin-left: 5px;
 }
 
-.test-txt{
-    color: #2980b9;
-    margin: 0px;
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
 
 .button{
     opacity: 0.8;
@@ -117,6 +104,8 @@ input::placeholder{
     font-size: 20px;
     font-family: 'Work Sans', sans-serif;
     list-style: none;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
 }
 .bottom-line{
     position: fixed;
