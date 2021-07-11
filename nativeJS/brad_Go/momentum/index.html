@@ -8,6 +8,7 @@
     <title>Momentum App</title>
   </head>
   <body>
+    <h2 id="clock">00:00:00</h2>
     <!-- username이 local storage에 저장되어 있는지에 따라서 결괏값을 선택해서 표시하기 위해 hidden class를 form과 h1에 적용 -->
     <form id="login-form" class="hidden">
       <input
@@ -18,8 +19,11 @@
       />
       <input type="submit" value="Log In" />
     </form>
-    <h2 id="clock">00:00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
+    <form id="todo-form">
+      <input type="text" placeholder="Write a To Do and Press Enter" required />
+    </form>
+    <ul id="todo-list"></ul>
     <div id="quote">
       <span></span>
       <span></span>
@@ -28,5 +32,6 @@
     <script src="js/clock.js"></script>
     <script src="js/quote.js"></script>
     <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
   </body>
 </html>
