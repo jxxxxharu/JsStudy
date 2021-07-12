@@ -1,5 +1,5 @@
 // api key 저장
-const API_KEY = `${API_KEY}`;
+const API_KEY = config.API_KEY;
 
 // 사용자의 위치를 얻는 함수
 function onGeoOk(position) {
