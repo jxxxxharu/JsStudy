@@ -1,4 +1,4 @@
-const toDoForm = document.getElementById("todo-form");
+//const toDoForm = document.getElementById("todo-form");
 // 위에서 html의 form을 이미 찾았고, toDoForm에 저장했기 때문에 그 <form>에서 <input>을 찾을 수 있다 .
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
@@ -30,6 +30,7 @@ function deleteToDo(event) {
 
 // toDoList의 ul에 li를 만드는 함수
 function paintToDo(newToDo) {
+  toDoList.classList.remove("hidden");
   // li, span, button 태그 만들기
   const li = document.createElement("li");
   // id값을 구별해서 삭제하기 위해 li에 id 추가
