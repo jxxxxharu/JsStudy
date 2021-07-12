@@ -10,5 +10,9 @@ const images = [
     "9.jpg"
 ]
 
+const randomImgs = images[Math.floor(Math.random() * images.length)];
 
-document.createElement("img");
+const paintImg = document.createElement("img"); 
+paintImg.src = `img/${randomImgs}`
+
+document.querySelector("#greeting").appendChild(paintImg);

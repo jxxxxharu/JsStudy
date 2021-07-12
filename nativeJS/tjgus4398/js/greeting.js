@@ -7,9 +7,9 @@ const KEY_USERNAME = "username";
 
 function onSubmit(event) { 
     event.preventDefault(); 
-    localStorage.setItem(KEY_USERNAME, loginInput.value); 
     const username = loginInput.value;
-    paintGreeting(username); 
+    localStorage.setItem(KEY_USERNAME, username); 
+    paintGreeting(username);
     }
  
 function paintGreeting(username) {
