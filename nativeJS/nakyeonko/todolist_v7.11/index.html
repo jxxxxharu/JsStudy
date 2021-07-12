@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>TODO LIST</h1>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="h1-title">TODO LIST</h1>
     <div class="mainBox">
-        <form class="form-todolist" action="">
-            <input class="form-todolist__input" type="text">
-        </form>
-        <div class ="ol-todolit">
-            <ol>
-                <li>Mix flour, baking powder, sugar, and salt.</li>
-                <li>In another bowl, mix eggs, milk, and oil.</li>
-                <li>Stir both mixtures together.</li>
-                <li>Fill muffin tray 3/4 full.</li>
-                <li>Bake for 20 minutes.</li>
-              </ol>
-        </div>
+      <form class="mainBox__form" action="">
+        <input class="mainBox__form__input" type="text" />
+      </form>
+      <div class="unchecked-todolit">
+        <h1 class="unchecked-todolit__h1">unchecked-todolit</h1>
+        <ul class="ul-unchecked">
+          <li><span>dmksd</span><button>S</button></li>
+        </ul>
+      </div>
+      <div class="checked-todolit">
+        <h1 class="unchecked-todolit__h1">checked-todolit</h1>
+        <ul class="ul-checked"></ul>
+      </div>
     </div>
-   
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
