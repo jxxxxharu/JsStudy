@@ -1,4 +1,5 @@
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -6,7 +7,16 @@
     <title>Momentum</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <header>
+    <div id="clock">00:00</div>
+    <span id="weather" class="hidden">
+      <span></span>
+      <img></img>
+      <span></span>
+    </span>
+  </header>
   <body>
+  
     <form id="login-form" class="hidden">
       <h1>What is your name?</h1>
       <input
@@ -17,33 +27,30 @@
       />
       <input type="submit" value="Log in" />
     </form>
-    <div class = "head-form">
- 
-    <span id="weather" class="hidden">
-      <span></span>
-      <img></img>
-      <span></span>
-    </span>
 
-  </div>
-  <div id="clock">00:00</div>
-    <div class="container">
-    
-      <h1 id="greeting" class="hidden"></h1>
 
-    <form id="todo-form" class="hidden">
-      <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list" class="hidden">
-      
-    </ul>
-    <div id="quote" class="hidden">
-      <span></span>
-      <span></span>
+    <main>
+      <div class="container">
+        <h1 id="greeting" class="hidden"></h1>
+
+        <form id="todo-form" class="hidden">
+          <input
+            type="text"
+            placeholder="Write a To Do and Press Enter"
+            required
+            maxlength="15"
+          />
+        </form>
+        <ul id="todo-list" class="hidden"></ul>
+    </main>
+      <footer>
+        <div id="quote" class="hidden">
+          <span></span>
+          <span></span>
+        </div>
+      </footer>
     </div>
-    
-  </div>
- 
+
     <script src="js/config.js"></script>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>

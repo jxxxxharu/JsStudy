@@ -21,7 +21,16 @@ function onLoginSubmit(event) {
 //중복코딩제거용 함수 선언부
 //greeting에 hidden클래스 삭제 및 username 넣는 함수
 function paintGreetings(username) {
-  greeting.innerText = `Hello ${username}`;
+  const date = new Date();
+  const Hour = date.getHours();
+  if (Hour < 12) {
+    greeting.innerText = `Good morning ${username}`;
+  } else if (Hour < 18) {
+    greeting.innerText = `Hello ${username}`;
+  } else {
+    greeting.innerText = `Hi ${username}`;
+  }
+
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
@@ -33,4 +42,3 @@ if (savedUserName === null) {
 } else {
   paintGreetings(savedUserName);
 }
-
