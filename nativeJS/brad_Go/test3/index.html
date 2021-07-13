@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Casino</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Random Number Game</h1>
+    <form>
+      <p >
+        <h3>Generate a number between 0 and</h3>
+        <input type="number" name="" id="max" required min="0"/>
+      </p>
+      <label for="guess">Guess the number:</label>
+      <input type="number" name="" id="guess" required min="0"/>
+      <button id="play">Play!</button>
+    </form>
+    <div>
+      <span class="hidden" id="text"></span><br>
+      <span class="hidden" id="win"><b>You win!</b></span>
+      <span class="hidden" id="lose"><b>You lose!</b></span>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

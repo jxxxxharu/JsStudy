@@ -8,19 +8,33 @@
     <title>Momentum App</title>
   </head>
   <body>
+    <h2 id="clock" class="hidden">00:00:00</h2>
     <!-- username이 local storage에 저장되어 있는지에 따라서 결괏값을 선택해서 표시하기 위해 hidden class를 form과 h1에 적용 -->
     <form id="login-form" class="hidden">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <input type="submit" value="Log In" />
+      <label id="login">Hello, what's your name?</label>
+      <input required maxlength="15" type="text" />
+      <input type="submit" value="Log In  >" />
     </form>
-    <h2 id="clock">00:00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
+    <form id="todo-form" class="hidden">
+      <label id="focus" for="todo">What is your main focus for today?</label>
+      <input type="text" id="todo" required />
+    </form>
+    <ul id="todo-list" class="hidden"></ul>
+    <div id="quote">
+      <span></span>
+      <span></span>
+    </div>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
+    <script src="js/quote.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
