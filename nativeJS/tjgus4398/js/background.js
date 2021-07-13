@@ -15,4 +15,4 @@ const randomImgs = images[Math.floor(Math.random() * images.length)];
 const paintImg = document.createElement("img"); 
 paintImg.src = `img/${randomImgs}`
 
-document.querySelector("#todo-form").appendChild(paintImg);
+document.body.appendChild(paintImg);
