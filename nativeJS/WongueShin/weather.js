@@ -1,4 +1,4 @@
-const API_KEY = 'YOUR_API_KEY_HERE';
+const API_KEY = OPEN_API_KEY;
 
 function onGeo(position) {
     latitude = position.coords.latitude;
@@ -8,8 +8,8 @@ function onGeo(position) {
     fetch(queryurl)
         .then(response => response.json())
         .then(data => {
-            const weatherDataList = [data.name, data.weather[0].main, data.weather[0].icon, data.main.temp];
-            //                        cityName  weather str           weatherIcon            currentTemp
+            const weatherDataList = [data.weather[0].icon, data.name, data.main.temp, ];
+            //                       weatherIcon           cityName   currentTemp      
             console.log(weatherDataList);
             makeWeatherInfo(weatherDataList);
             setWeatherStyle()
@@ -21,15 +21,16 @@ function makeWeatherInfo(weatherDataList) {
     weatherContainer = document.createElement('div');
     weatherContainer.setAttribute('id', 'weatherContainer');
     
-    weatherContentList = [document.createElement('span'), document.createElement('span'), document.createElement('img'), document.createElement('span')];
-    weatherContentList[0].setAttribute('id', 'cityName');
-    weatherContentList[0].innerText = weatherDataList[0];
-    weatherContentList[1].setAttribute('id', 'currentWeather');
+    weatherContentList = [document.createElement('img'), document.createElement('span'), document.createElement('span')];
+    
+    weatherContentList[0].setAttribute('id', 'weatherIcon');
+    weatherContentList[0].setAttribute('src', `https://openweathermap.org/img/wn/${weatherDataList[0]}.png`);
+    weatherContentList[1].setAttribute('id', 'cityName');
     weatherContentList[1].innerText = weatherDataList[1];
-    weatherContentList[2].setAttribute('id', 'wertherIcon');
-    weatherContentList[2].setAttribute('src', `https://openweathermap.org/img/wn/${weatherDataList[2]}.png`);
-    weatherContentList[3].setAttribute('id', 'currentTemp');
-    weatherContentList[3].innerText = weatherDataList[3];
+    weatherContentList[2].setAttribute('id', 'currentTemp');
+    celsiusSymbol = `&#8451;`
+    weatherContentList[2].innerHTML = `${Math.round(weatherDataList[2])}${celsiusSymbol}`;
+    
 
     weatherContentList.forEach(element => {
         weatherContainer.appendChild(element);
@@ -41,6 +42,9 @@ function setWeatherStyle(){
     weCon = document.querySelector('#weatherContainer');
     weCon.style.color = '#ecf0f1';
     weCon.style.textAlign = 'right';
+    weIcon = weCon.querySelector('#weatherIcon');
+    weIcon.style.width = '30px';
+    
 }
 
 function geoError() {

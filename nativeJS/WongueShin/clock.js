@@ -1,4 +1,4 @@
-const clockContainer = document.querySelector('.js-clock'),
+    clockContainer = document.querySelector('.js-clock');
     mainDiv = document.querySelector('.main');
 
 
