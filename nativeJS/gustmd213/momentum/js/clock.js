@@ -9,14 +9,16 @@ function getClock() {
 
   clock.innerText = `${hours}:${minutes}`;
 }
+function startClock() {
+  const clockUsername = localStorage.getItem(USERNAME_KEY);
+  //시작
+  if (clockUsername === null) {
+    clock.classList.add(HIDDEN_CLASSNAME);
+  } else {
+    setInterval(getClock, 1000);
 
-//시작
-if (savedUserName === null) {
-  clock.classList.add(HIDDEN_CLASSNAME);
-} else {
-  setInterval(getClock, 1000);
-
-  clock.classList.remove(HIDDEN_CLASSNAME);
+    clock.classList.remove(HIDDEN_CLASSNAME);
+  }
 }
 
 // setInterval(sayHello, 5000); //정해진 밀리초마다 함수실행

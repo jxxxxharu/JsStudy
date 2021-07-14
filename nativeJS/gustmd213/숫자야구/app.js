@@ -95,7 +95,6 @@ function onSubmit(event) {
 }
 
 makeRandom();
-console.log(numbers);
 inputForm.addEventListener("submit", onSubmit);
 
 input1.addEventListener("input", maxLengthCheck);

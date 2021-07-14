@@ -1,12 +1,11 @@
-//String 선언
-const HIDDEN_CLASSNAME = "hidden";
-const USERNAME_KEY = "userName";
+
 
 //선택자 선언
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
-
+const header = document.querySelector("header");
+const footer = document.querySelector("footer");
 //이벤트 제어 함수 선언부
 //로그인 버튼
 function onLoginSubmit(event) {
@@ -20,6 +19,7 @@ function onLoginSubmit(event) {
 
 //중복코딩제거용 함수 선언부
 //greeting에 hidden클래스 삭제 및 username 넣는 함수
+
 function paintGreetings(username) {
   const date = new Date();
   const Hour = date.getHours();
@@ -31,14 +31,38 @@ function paintGreetings(username) {
     greeting.innerText = `Hi ${username}`;
   }
 
-  greeting.classList.remove(HIDDEN_CLASSNAME);
+  toggleHiddenClass()
+  quote()
+  startWeather()
+  startClock() 
 }
 
-//시작
 const savedUserName = localStorage.getItem(USERNAME_KEY);
 if (savedUserName === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
+  
 } else {
   paintGreetings(savedUserName);
+  
+}
+
+function toggleHiddenClass(){
+  const todoli =  document.querySelector("#todo-list");
+  const savedname = localStorage.getItem(USERNAME_KEY);
+  if (savedname === null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    greeting.classList.add(HIDDEN_CLASSNAME);
+    header.classList.add(HIDDEN_CLASSNAME);
+    footer.classList.add(HIDDEN_CLASSNAME);
+    todoForm.classList.add(HIDDEN_CLASSNAME);
+    todoli.classList.add(HIDDEN_CLASSNAME);
+  } else{
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    header.classList.remove(HIDDEN_CLASSNAME);
+    footer.classList.remove(HIDDEN_CLASSNAME);
+    todoForm.classList.remove(HIDDEN_CLASSNAME);
+    todoli.classList.remove(HIDDEN_CLASSNAME);
+  }
 }

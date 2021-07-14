@@ -23,13 +23,6 @@ function onGeoError() {
   alert("Can't find you. No weather for you.");
 }
 
-if (savedUserName === null) {
-  weather.classList.add(HIDDEN_CLASSNAME);
-} else {
-  weather.classList.remove(HIDDEN_CLASSNAME);
-  navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-}
-
 function wDescEngToKor(w_id) {
   const w_id_arr = [
     201, 200, 202, 210, 211, 212, 221, 230, 231, 232, 300, 301, 302, 310, 311,
@@ -121,4 +114,14 @@ function wDescEngToKor(w_id) {
     }
   }
   return "none";
+}
+
+function startWeather() {
+  const weatherUsername = localStorage.getItem(USERNAME_KEY);
+  if (weatherUsername === null) {
+    weather.classList.add(HIDDEN_CLASSNAME);
+  } else {
+    weather.classList.remove(HIDDEN_CLASSNAME);
+    navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+  }
 }
