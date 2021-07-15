@@ -1,0 +1,64 @@
+
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    color: white;
+}
+.h1-title{
+    color: white;
+    font-size: 75px;
+
+    position: relative;
+    top: -80px;
+}
+.mainBox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    width: 550px;
+    height: 550px;
+    border: solid white 2px;
+}
+
+.mainBox__form{
+    position: relative;
+    top: 40px;
+
+}
+
+.mainBox__form__input{
+    width: 400px;
+    height: 30px;
+
+    border:white solid 5px;
+    background-color: black;
+
+    color: white;
+}
+
+.unchecked-todolit{
+   
+    
+    margin: 25px;
+   
+}
+.checked-todolit{
+   
+    
+    margin: 25px;
+   
+}
+
+.li{
+    display: flex;
+    justify-content: space-between;
+}
