@@ -93,6 +93,12 @@ body{
     opacity: 50% !important;
 }
 
+.popoff{
+    transition-property: all;
+    transition-duration: 200ms;
+    opacity: 0% !important;
+}
+
 .hide {
     display: none;
 }

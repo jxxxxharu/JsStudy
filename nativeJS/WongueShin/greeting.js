@@ -65,12 +65,14 @@ function paintGreeting(text) {
 function popup(){
     console.log('mousein')
     xmark.style.visibility = 'visible';
+    xmark.classList.remove('popoff');
     xmark.classList.add('popup');
 }
 
 function popoff(){
     console.log('mouseout')
     xmark.classList.remove('popup');
+    xmark.classList.add('popoff')
     xmark.style.visibility = 'hidden';
 }
 
