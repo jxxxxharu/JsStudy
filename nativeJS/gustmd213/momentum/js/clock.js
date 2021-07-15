@@ -1,4 +1,3 @@
-//선택자 선언
 const clock = document.querySelector("#clock");
 
 function getClock() {

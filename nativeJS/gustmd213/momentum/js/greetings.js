@@ -1,5 +1,3 @@
-
-
 //선택자 선언
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
@@ -31,24 +29,22 @@ function paintGreetings(username) {
     greeting.innerText = `Hi ${username}`;
   }
 
-  toggleHiddenClass()
-  quote()
-  startWeather()
-  startClock() 
+  toggleHiddenClass();
+  quote();
+  // startWeather()
+  startClock();
 }
 
 const savedUserName = localStorage.getItem(USERNAME_KEY);
 if (savedUserName === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
-  
 } else {
   paintGreetings(savedUserName);
-  
 }
 
-function toggleHiddenClass(){
-  const todoli =  document.querySelector("#todo-list");
+function toggleHiddenClass() {
+  const todoli = document.querySelector("#todo-list");
   const savedname = localStorage.getItem(USERNAME_KEY);
   if (savedname === null) {
     loginForm.classList.remove(HIDDEN_CLASSNAME);
@@ -57,7 +53,7 @@ function toggleHiddenClass(){
     footer.classList.add(HIDDEN_CLASSNAME);
     todoForm.classList.add(HIDDEN_CLASSNAME);
     todoli.classList.add(HIDDEN_CLASSNAME);
-  } else{
+  } else {
     loginForm.classList.add(HIDDEN_CLASSNAME);
     greeting.classList.remove(HIDDEN_CLASSNAME);
     header.classList.remove(HIDDEN_CLASSNAME);
