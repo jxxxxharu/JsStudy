@@ -42,10 +42,21 @@ const quotes = [
   },
 ];
 
-const quote = document.querySelector('#quote span:first-child');
-const author = document.querySelector('#quote span:last-child');
+const quote = document.querySelector('.quote');
+const quoteAuthor = document.querySelector('.quote-author');
 
-const todayQuote = quotes[Math.floor(Math.random() * quotes.length)]
+const random =parseInt(Math.random()*quotes.length);
+quote.innerText = quotes[random]['quote'];
+quoteAuthor.innerText = quotes[random]['author'];
 
-quote.innerText = todayQuote.quote;
-author.innerText = todayQuote.author;
+
+//올라가면 보임
+//내려가면 안보임
+
+quote.addEventListener('mouseover', (event) => {
+  quoteAuthor.classList.remove('hidden');
+})
+
+quote.addEventListener('mouseout', (event) => {
+  quoteAuthor.classList.add('hidden');
+})
