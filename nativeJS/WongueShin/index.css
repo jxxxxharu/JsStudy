@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 
 body{
     background-color: #ecf0f1;
@@ -9,10 +11,31 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    height: 25px;
-    background: linear-gradient(to bottom,rgb(48, 16, 102) ,10% , rgb(152, 134, 247)); 
-    opacity: 0.8;
+    height: 7vh;
+    background: linear-gradient(to top,rgba(0,0,0,0), 3%, rgba(32, 32, 32, 0.1) ,10% , rgba(70, 70, 70, 0.1));
     z-index: 2;
+}
+
+#weatherIcon{
+    position: relative;
+    left: 35px;
+}
+
+#currentTemp{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 20px;
+    color: rgba(237, 241, 242, 0.8);
+    margin-left: 5px;
+    position: relative;
+    bottom: 2px;
+}
+
+#cityName{
+    font-size: 12px;
+    color: rgba(237, 241, 242, 0.8);
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    top: 4px;
 }
 
 .upline-txt{
@@ -20,19 +43,9 @@ body{
 
 }
 
-.single-line{
-    height: 5px;
-    width: 100%;
-    background: radial-gradient(rgba(255, 255, 255, 0.155), rgb(170, 153, 201, 0.555), rgba(170, 153, 201, 0.155)) ;
-    opacity: 0.85;
-    position: absolute;
-    top: 15px;
-    z-index: 3;
-}
-
 .main{
     height: 85vh;
-    background: linear-gradient(to bottom,rgba(0, 0, 0, 0.1), 10% , rgba(124, 124, 124, 0.068), 90%, rgba(0, 0, 0, 0));
+    background: radial-gradient(rgba(124, 124, 124, 0.1), 60% , rgba(32, 32, 32, 0.1), 85%, rgba(0, 0, 0, 0.3));
     margin: 0px;
     padding: 15px;
     padding-top: 40px;
@@ -40,20 +53,25 @@ body{
 
 .js-clock{
     position: relative;
-}
-
-.clock-title{
     margin: 0px;
     font-size: 125px;
     color: #ecf0f1;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
         0 1px rgba(127, 140, 141, 0.3);
+    text-align: center;
     
 }
 
-.Clicked{
-    color: #0b8088;
+.form-and-nametxt{
+    position: relative;
+    top: 22vh;
+    color: #ecf0f1;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
+    font-size: 45px;
 }
 
 .hide {
@@ -69,37 +87,49 @@ body{
     margin-bottom: 20px;
 }
 
-input{
-    background: linear-gradient(to top, rgba(11,11,11,0.5), 1%, rgba(124, 124, 124, 0.068));
+.js-input{
+    background: linear-gradient(to top, rgba(11,11,11,0.65), 50%, rgba(124, 124, 124, 0.068));
     border-width: 0px;
     border-bottom-width: 1px;
-    margin-left: 25%;
+    color: #ecf0f1;
 }
+
+.js-input:focus{
+    outline: none;
+}
+
+input::placeholder{
+    color: #ecf0f1;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
+}
+
 .js-greetings{
     margin-left: 5px;
 }
 
-.test-txt{
-    color: #2980b9;
-    margin: 0px;
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
 
 .button{
     opacity: 0.8;
     margin-bottom: 20px;
 }
-.buttonClicked{
-    color: #e74c3c;
-}
 
 .to-do-div{
     font-size: 16px;
+    position: relative;
+    top: 22vh;
+    text-align: center;
 }
 
 .toDoList{
     margin: 15px 0px;
+    text-align: center;
+    color: #ecf0f1;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    list-style: none;
+    text-shadow: 1px 0 rgba(127, 140, 141, 0.3),
+        0 1px rgba(127, 140, 141, 0.3);
 }
 .bottom-line{
     position: fixed;
