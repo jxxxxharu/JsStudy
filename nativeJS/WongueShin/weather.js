@@ -1,5 +1,3 @@
-const API_KEY = OPEN_API_KEY;
-
 function onGeo(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
