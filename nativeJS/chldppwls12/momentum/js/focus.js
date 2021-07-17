@@ -6,7 +6,7 @@ const question = document.querySelector('.question');
 const focusBox = document.querySelector('.focus-box');
 
 const savedFocus = localStorage.getItem('focus');
-
+const FOCUS_KEY = 'focus';
 function editQuestion(){
   question.innerText = 'TODAY';
   question.style.fontSize = '15px';
@@ -21,9 +21,7 @@ function editQuestionDefault(){
   question.style.fontWeight = '700';
 }
 
-if (savedFocus === null){
-}
-else{
+if (savedFocus){
   editQuestion();
   focusForm.classList.add(HIDDEN_CLASSNAME);
   focus.innerText = savedFocus;
@@ -33,7 +31,7 @@ else{
 function onFocusSubmit(event){
   event.preventDefault();
   const value = focusInput.value;
-  localStorage.setItem('focus', value);
+  localStorage.setItem(FOCUS_KEY, value);
   editQuestion();
   focusBox.classList.remove(HIDDEN_CLASSNAME);
   focus.innerText = value;
@@ -47,6 +45,7 @@ function onDeleteBtnClick(event){
   editQuestionDefault();
   focusForm.classList.remove(HIDDEN_CLASSNAME);
   focusInput.value = '';
+  localStorage.removeItem(FOCUS_KEY);
 }
 
 focusForm.addEventListener('submit', onFocusSubmit);

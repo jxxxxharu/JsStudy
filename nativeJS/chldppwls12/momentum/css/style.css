@@ -11,7 +11,6 @@ body{
   background-position: center center;
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
-  position: relative;
 }
 
 button,
@@ -98,6 +97,9 @@ main{
   text-align: center;
   margin-bottom: 2px;
 }
+.quote:hover{
+  cursor: pointer;
+}
 .quote-author{
   font-size: 12px;
 }
@@ -111,6 +113,9 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.focus-delete-btn:hover{
+  cursor: pointer;
 }
 input{
   width: 80%;
@@ -140,6 +145,90 @@ input{
 
 .focus{
   margin-right: 20px;
+}
+
+.todo{
+  display: none;
+}
+
+@media screen and (min-width: 768px){
+  .clock{
+    font-size: 120px;
+    font-weight: 600;
+  }
+  main{
+    margin-bottom: 20px;
+  }
+  .greeting{
+    font-size: 35px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+  }
+  .weather-icon{
+    width: 40px;
+    height: 40px;
+  }
+
+  .todo{
+    position: fixed;
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+
+    z-index: 100;
+  }
+  .modal{
+    cursor:initial;
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    width: 320px;
+    background-color: #fff;
+    color: black;
+    padding: 30px 20px;
+    border-radius: 30px;
+    text-align: left;
+  }
+  
+  .modal > span{
+    font-size: 24px;
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .modal ul{
+    padding: 0;
+    font-weight: 500;
+  }
+  .modal .todo-list{
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+  }
+  .modal li{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .modal li:last-child{
+    margin-bottom: 20px;
+  }
+  .fa-times{
+    cursor: pointer;
+  }
+  
+  .todo input{
+    margin: 0;
+    color: black;
+    width: 100%;
+    border-bottom: 1px solid rgba(165, 160, 160);
+  }
+  
 }
 
 .hidden{
