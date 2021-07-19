@@ -5,7 +5,7 @@ const todoForm = document.querySelector('.todo-form');
 const todoList = document.querySelector('.todo ul');
 
 let todos = [];
-const savedTodos = localStorage.getItem('todos');
+let savedTodos = localStorage.getItem('todos');
 
 function saveTodo(){
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -74,7 +74,15 @@ function handleDeleteList(event){
   li.remove();
 }
 
+if (!savedName){
+  todos = [];
+  saveTodo();
+  //먼저 가져온 savedTodos 업뎃
+  savedTodos = localStorage.getItem('todos');
+}
+
 if (savedTodos){
+  console.log(savedTodos)
   todos = JSON.parse(savedTodos);
   todos.forEach(element => {
     makeList(element);

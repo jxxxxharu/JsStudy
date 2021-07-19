@@ -36,8 +36,6 @@ function getClock(){
     else{
       greeting.innerHTML = `Good ${timeCategory}! <br/> ${savedName}`;
     }
-  }else{
-    greeting.innerHTML = 'why?'
   }
 }
 

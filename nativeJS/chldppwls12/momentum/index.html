@@ -17,10 +17,15 @@
 
 <body>
   <header>
-    <div class="link-box">
+    <!-- <div class="link-box">
       <div class="links">Links</div>
       <i class="fas fa-search"></i>
-    </div>
+    </div> -->
+    <form class="link-box" action="https://www.google.com/search" method="GET">
+      <div class="links">Links</div>
+      <button class="fas fa-search" type="submit"></button>
+      <input type="text" class="link-input" name="q">
+    </form>
     <div class="weather-box">
       <div class="weather-info">
         <img src="" alt="weather-icon" class="weather-icon">
