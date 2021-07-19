@@ -43,20 +43,18 @@ const quotes = [
 ];
 
 const quote = document.querySelector('.quote');
-const quoteAuthor = document.querySelector('.quote-author');
+const div = document.createElement('div');
+
+div.classList.add('quote-author');
 
 const random =parseInt(Math.random()*quotes.length);
 quote.innerText = quotes[random]['quote'];
-quoteAuthor.innerText = quotes[random]['author'];
-
-
-//올라가면 보임
-//내려가면 안보임
 
 quote.addEventListener('mouseover', (event) => {
-  quoteAuthor.classList.remove('hidden');
+  div.innerText =quotes[random]['author'];
+  quote.append(div);
 })
 
 quote.addEventListener('mouseout', (event) => {
-  quoteAuthor.classList.add('hidden');
+  div.remove();
 })

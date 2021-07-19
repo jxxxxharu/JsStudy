@@ -16,14 +16,56 @@ function makeList(obj){
   li.id = obj.id;
   li.classList.add('todo-list');
 
+  const div = document.createElement('div');
+  div.classList.add('checkbox-todo');
+
   const i = document.createElement('i');
   i.classList.add('fa', 'fa-times');
-  li.innerHTML = `<span>${obj.todo}</span>`;
+
+  const input = document.createElement('input');
+  input.setAttribute('type', 'checkbox');
+  input.classList.add('li-check');
+
+  const span = document.createElement('span');
+
+  if (obj.done){
+    span.classList.add('done');
+    input.checked = true;
+  }
+
+  // li > div > input + span, i
+  li.append(div)
   li.append(i);
+  div.append(input);
+  span.innerText = obj.todo;
+  div.append(span);
+
   todoList.append(li);
 
+  input.addEventListener('change', function(event){
+    const span = event.target.nextSibling;
+    if (this.checked){
+      span.classList.add('done');
+      handleDone(this, 1);
+    }
+    else{
+      span.classList.remove('done');
+      handleDone(this, 0);
+    }
+  });
   i.addEventListener('click', handleDeleteList);
 }
+
+function handleDone(item, flag){
+  for (const li of todos){
+    if (li.id === parseInt(item.closest('.todo-list').id)){
+      li.done = flag;
+      break;
+    }
+  }
+  saveTodo();
+}
+
 
 function handleDeleteList(event){
   const li = event.target.parentElement;
@@ -46,7 +88,7 @@ todo.addEventListener('click', function(event){
 todoForm.addEventListener('submit', function(event) {
   event.preventDefault();
   const todo = todoInput.value;
-  todos.push({id: Date.now(), todo: todo});
+  todos.push({id: Date.now(), todo: todo, done: 0});
   todoInput.value = '';
   saveTodo();
   makeList(todos[todos.length - 1]);

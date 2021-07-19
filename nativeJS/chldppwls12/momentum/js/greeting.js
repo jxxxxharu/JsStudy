@@ -1,4 +1,3 @@
-let savedName = localStorage.getItem('userName');
 const isLogin = document.querySelector('.is-login')
 const isNotLogin = document.querySelector('.is-not-login');
 const loginInput = document.querySelector('.login-input');
@@ -25,4 +24,5 @@ function onLoginFormSubmit(event){
   savedName = userName;
   isLogin.classList.remove(HIDDEN_CLASSNAME);
   isNotLogin.classList.add(HIDDEN_CLASSNAME);
+  getClock();
 }

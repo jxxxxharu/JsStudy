@@ -81,8 +81,14 @@ main{
   text-align: center;
   font-weight: 700;
 }
-.question, .ask-name{
+.question{
   font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.ask-name{
+  font-size: 32px;
   text-align: center;
   margin-bottom: 15px;
   font-weight: 700;
@@ -128,7 +134,9 @@ input{
   cursor: pointer;
 }
 .login-btn:active,
-.focus-btn:active
+.focus-btn:active,
+.login-btn:hover,
+.focus-btn:hover
 {
   background-color: #fff;
   color: black;
@@ -182,6 +190,9 @@ input{
 
     z-index: 100;
   }
+  .todo:hover{
+    color: rgb(190, 189, 189);
+  }
   .modal{
     cursor:initial;
     position: absolute;
@@ -190,8 +201,8 @@ input{
     width: 320px;
     background-color: #fff;
     color: black;
-    padding: 30px 20px;
-    border-radius: 30px;
+    padding: 20px 20px;
+    border-radius: 5px;
     text-align: left;
   }
   
@@ -218,17 +229,34 @@ input{
   .modal li:last-child{
     margin-bottom: 20px;
   }
+  .modal .checkbox-todo{
+    display: flex;
+    align-items: center;
+  }
+  .li-check{
+    display: inline;
+    width: fit-content;
+    margin: 0;
+    margin-right: 10px;
+  }
   .fa-times{
     cursor: pointer;
   }
+  .fa-times:hover{
+    color: rgb(190, 189, 189);
+  }
   
-  .todo input{
+  .todo .new-todo-input{
+    font-size: 18px;
     margin: 0;
     color: black;
     width: 100%;
     border-bottom: 1px solid rgba(165, 160, 160);
   }
   
+  .done{
+    text-decoration: line-through;
+  }
 }
 
 .hidden{
