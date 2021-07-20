@@ -43,4 +43,4 @@
 <b>Native Js 결과물</b>
 * [WongueShin](https://wongueshin.github.io/JsStudy/nativeJS/WongueShin/)
 * [brad_Go](https://brad-go.github.io/JsStudy/nativeJS/brad_Go/momentum)
-* [gustmd213] (https://gustmd213.github.io/JsStudy/nativeJS/gustmd213/momentum/index.html)
+* [gustmd213](https://gustmd213.github.io/JsStudy/nativeJS/gustmd213/momentum/)
