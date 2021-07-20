@@ -1,15 +1,78 @@
 body{
     text-align: center;
-    ;
-}
-.header_wrapper{
-    position :fixed;
-    top: 0px;
-    background: yellow;  
-    width: 100%;
-    box-shadow: rgb(0,0,0 / 8%) 0px 0px 8px;
 }
 
-.header_logo{
-    float: left;
+#js-clock {
+  margin-top :30vh;
+}
+
+.js-greeting > h1 {
+  font-size: 60px;
+  color:  white;
+}
+
+input {
+  width: 500px;
+  font-size: 50px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid white;
+  box-sizing: border-box;
+  color: white;
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+input:focus {
+ outline: none;
+}
+input:focus::-webkit-input-placeholder {
+  color: gray;  
+}
+
+
+#js-clock > h1 {
+  color: white;
+  font-size: 1050%;
+  margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+.bgImage {
+  object-fit: cover;
+  z-index: -1;
+  position: absolute;
+  left: 0%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+.done {
+  text-decoration: line-through;
+  text-decoration-color: red;
+  color: grey;
+
+}
+
+.delButton{
+  margin-left: 5px;
 }
