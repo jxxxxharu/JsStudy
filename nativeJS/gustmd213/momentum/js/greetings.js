@@ -31,7 +31,7 @@ function paintGreetings(username) {
 
   toggleHiddenClass();
   quote();
-  // startWeather()
+  startWeather();
   startClock();
 }
 
