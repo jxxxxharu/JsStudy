@@ -20,7 +20,7 @@ function paintGreeting(username) {
   } else if(currentTime >= 17 && 22 > currentTime) {
     greeting.innerText = `Good evening, ${username}`;
   } else {
-    greeting.innerText = `${username}, great job today. Take a rest`;
+    greeting.innerText = `${username}, great job today.`;
   }
   
   clock.classList.remove(HIDDEN_CLASSNAME);
