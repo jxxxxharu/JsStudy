@@ -1,5 +1,3 @@
-const API_KEY = config.API_KEY;
-
 function onGeoSuccess(position){
   const latitude  = position.coords.latitude;
   const longitude = position.coords.longitude;
