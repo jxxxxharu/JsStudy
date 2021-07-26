@@ -1,0 +1,7 @@
+/* inline-block을 이용해서 h3를 인라인 요소로 만듬! */
+h3 {
+  display: inline-block;
+}
+.hidden {
+  display: none;
+}

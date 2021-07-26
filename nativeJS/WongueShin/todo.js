@@ -19,7 +19,6 @@ function loadLocalData() {
 }
 
 function drawList(localData) {
-    console.log(`localData.length = ${localData.length}     localData = ${localData}`);
     if (localData.length == 0) {
         toDoUi.innerHTML = '';
         return
@@ -68,13 +67,13 @@ function setCheckStyle(checkform, index) {
     const checkbox = checkform.querySelector(`.checkNumber${index}`);
     checkbox.style.margin = '3px';
     checkform.style.position = 'relative';
-    checkform.style.top = '-18px';
+    checkform.style.top = '-23px';
     offwidth = checkform.parentNode.querySelector(`.textNumber${index}`).offsetWidth;
-    checkform.style.left = `${offwidth + 30}px`;
+    checkform.style.left = `${-(20 + offwidth/2)}px`;
     const crossMark = checkform.parentNode.querySelector(`.Xnum${index}`);
     crossMark.style.position = 'relative';
-    crossMark.style.top = '-40px';
-    crossMark.style.left = `${offwidth + 60}px`;
+    crossMark.style.top = '-49px';
+    crossMark.style.left = `${offwidth/2 + 30}px`;
     checkform.parentNode.style.height = '22px';
 
     

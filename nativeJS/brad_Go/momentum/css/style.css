@@ -1,0 +1,148 @@
+.hidden {
+  display: none;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  background: no-repeat center fixed;
+  background-size: cover;
+}
+
+h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -150%);
+  text-align: center;
+  font-size: 10em;
+  color: white;
+}
+
+#login-form {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, 50%);
+  text-align: center;
+}
+
+#login-form label {
+  display: block;
+  font-size: 3em;
+  font-weight: 500;
+  color: white;
+}
+
+#login-form input:not(:last-of-type) {
+  display: block;
+  border: none;
+  border-bottom: 3px solid white;
+  outline-style: none;
+  background: none;
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#login-form input:last-child {
+  border: 2px solid white;
+  border-collapse: ridge;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 12px rgb(0 0 0 / 15%);
+  outline: 0;
+  margin-top: 1em;
+  padding: 10px 20px 10px 20px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: white;
+}
+
+#login-form input:last-child:hover {
+  background: #f3f3f367;
+}
+
+#greeting {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: 0;
+  transform: translate(-50%, 50%);
+  color: white;
+  text-align: center;
+  font-size: 3em;
+}
+
+#todo-form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 200%);
+  text-align: center;
+  color: white;
+}
+
+#todo-form label {
+  display: block;
+  font-size: 2.2em;
+  font-weight: 500;
+}
+
+#todo-form input {
+  position: absolute;
+  display: block;
+  left: 15%;
+  border: none;
+  border-bottom: 3px solid white;
+  outline-style: none;
+  background: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#todo-list {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  background-color: rgba(0, 0, 0, 0.548);
+  width: 10vw;
+  height: 30vh;
+  padding: 10px 30px 10px 30px;
+  color: white;
+}
+
+#todo-list li {
+  list-style: circle;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin: 10px;
+  padding: 2px;
+}
+
+#todo-list button {
+  background: none;
+  border: none;
+  text-align: right;
+}
+
+#quote {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  bottom: 10%;
+  color: white;
+}
+
+#weather {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+}
