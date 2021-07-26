@@ -1,4 +1,4 @@
-const clock = document.querySelector("#clock");
+// const clock = document.querySelector("#clock");
 
 // Date 객체를 생성하는 함수 작성
 function getClock() {
@@ -17,3 +17,4 @@ function getClock() {
 getClock();
 // 매 초마다 getClock()함수를 실행해서 시간 표시
 setInterval(getClock, 1000);
+
