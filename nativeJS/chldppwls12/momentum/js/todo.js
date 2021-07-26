@@ -82,7 +82,6 @@ if (!savedName){
 }
 
 if (savedTodos){
-  console.log(savedTodos)
   todos = JSON.parse(savedTodos);
   todos.forEach(element => {
     makeList(element);
