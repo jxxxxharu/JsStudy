@@ -3,7 +3,7 @@ const API_KEY = config.API_KEY;
 function onGeoSuccess(position){
   const latitude  = position.coords.latitude;
   const longitude = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
+  const url = `https://weatheraaaaa.herokuapp.com/`;
   fetch(url)
     .then((response) => response.json())
     .then(data => {
